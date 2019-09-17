@@ -27,16 +27,20 @@ var firebaseConfig = {
       console.log("weewoo");
       return 0;
     }
-    // do more checking
-    // convert start time with moment.
-    //const { nextTrain, minutesAway } = convertTime(startTime, frequency);
-    // check if start time has am/pm or just a military time
+    let firstTimeConverted = moment(startTime, "HH:mm").subtract(1, "years");
+    let diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    let remainder = diffTime % frequency;
+    let minutesAway = frequency - remainder;
+    let nextTrain = moment()
+      .add(minutesAway, "minutes")
+      .format("LT");
+    console.log(name, destination, frequency, nextTrain, minutesAway);
     database.ref().push({
       name,
       destination,
       frequency,
-    //   nextTrain,
-    //   minutesAway
+      nextTrain,
+      minutesAway
     });
   };
   
