@@ -13,7 +13,92 @@
     />
   </head>
   <body>
-   
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="text-center">Train Schedule</h1>
+          <h2 class="text-center">
+            A comprehensive schedule for train times.
+          </h2>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-default">
+              <div class="card-header">
+                Train Times
+              </div>
+              <div class="card-body">
+                <table id="train-table" class="table">
+                  <thead>
+                    <tr>
+                      <td scope="col">Train</td>
+                      <td scope="col">Destination</td>
+                      <td scope="col">Frequency(min)</td>
+                      <td scope="col">Next Arrival</td>
+                      <td scope="col">Minutes Away</td>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-default">
+              <div class="card-header">
+                Add new train to table
+              </div>
+              <div class="card-body">
+                <!-- Sign-up Form (note the various input "types")-->
+                <form role="form">
+                  <div class="form-group row">
+                    <label for="name">Train Name:</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="name"
+                      placeholder="Warmsprings - Richmond"
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <label for="destination">Destination:</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="destination"
+                      placeholder="Richmond"
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <label for="startTime">First Train Time: (HH:MM AM/PM)</label>
+                    <input
+                      class="form-control"
+                      type="time"
+                      id="startTime"
+                      placeholder="10:10"
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <label for="frequency">Frequency: (mins)</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="frequency"
+                      placeholder="10"
+                    />
+                  </div>
+                  <button class="btn btn-primary" id="submiting" type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
